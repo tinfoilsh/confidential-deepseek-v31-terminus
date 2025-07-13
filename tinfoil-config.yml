@@ -28,12 +28,9 @@ containers:
 
 shim:
   listen-port: 443
-  upstream-port: 8087
-#  publish-attestation: true
-#  tls-challenge: dns
-  tls-mode: self-signed
-  publish-attestation: false
-  
+  upstream-port: 8081
+  publish-attestation: true
+  tls-challenge: dns  
   paths:
     - /v1/chat/completions
     - /metrics
