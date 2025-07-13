@@ -29,7 +29,7 @@ containers:
 shim:
   listen-port: 443
   upstream-port: 8081
-  publish-attestation: true
+  publish-attestation: false
   tls-challenge: dns  
   paths:
     - /v1/chat/completions
