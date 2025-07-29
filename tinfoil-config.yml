@@ -30,6 +30,7 @@ shim:
   upstream-port: 8001
   publish-attestation: false
   tls-challenge: dns  
+  control-plane: https://api.tinfoil.sh
   paths:
     - /v1/chat/completions
     - /metrics
