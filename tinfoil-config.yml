@@ -20,8 +20,7 @@ containers:
       "vllm/vllm-openai:v0.9.2",
       "--model", "/tinfoil/mpk/mpk-1cacd16f763afa07848c18e564b35699aef1530357873bd9ddd483626312b178",
       "--tensor-parallel-size", "8",
-      "--max-model-len", "32768",
-      "--enforce-eager",
+      "--max-model-len", "65536",
       "--served-model-name", "deepseek-r1-0528",
       "--port", "8001"
     ]
