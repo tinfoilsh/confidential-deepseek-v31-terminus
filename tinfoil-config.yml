@@ -22,6 +22,7 @@ containers:
       "--tensor-parallel-size", "8",
       "--max-model-len", "131072",
       "--served-model-name", "deepseek-r1-0528",
+      "--gpu-memory-utilization", "0.95",
       "--port", "8001"
     ]
 
