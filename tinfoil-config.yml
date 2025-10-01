@@ -6,26 +6,27 @@ gpus: full
 vllm: false
 
 models:
-  - name: "deepseek-r1-0528"
-    repo: "deepseek-ai/DeepSeek-R1-0528@4236a6af538feda4548eca9ab308586007567f52"
-    mpk: "1cacd16f763afa07848c18e564b35699aef1530357873bd9ddd483626312b178_688604053504_16d2e2df-0159-5413-9396-337d023ceb3b"
+  - name: "deepseek-v31-terminus"
+    repo: "deepseek-ai/DeepSeek-V3.1-Terminus@19510d6dc61f79dbd925bd51ee8a9081c509a4b6"
+    mpk: "0289583410dc6377d761a9c1b8317688f717b304314100d070a508729e04fe2c_688606003200_82dadf78-da7b-572b-bfad-4a2c69558a0a"
   
 containers:
-  - name: "deepseek-r1-0528"
+  - name: "deepseek-v31-terminus"
     image: ""
     args: [
       "--runtime", "nvidia",
       "--gpus", "all",
       "--ipc", "host",  
       "vllm/vllm-openai:v0.10.2",
-      "--model", "/tinfoil/mpk/mpk-1cacd16f763afa07848c18e564b35699aef1530357873bd9ddd483626312b178",
+      "--model", "/tinfoil/mpk/mpk-0289583410dc6377d761a9c1b8317688f717b304314100d070a508729e04fe2c",
       "--tensor-parallel-size", "8",
+      "-dcp", "8",
       "--max-model-len", "131072",
-      "--served-model-name", "deepseek-r1-0528",
+      "--served-model-name", "deepseek-v31-terminus",
       "--gpu-memory-utilization", "0.95",
       "--enable-auto-tool-choice",
-      "--tool-call-parser", "deepseek_v3",
-      "--chat-template", "examples/tool_chat_template_deepseekr1.jinja",
+      "--tool-call-parser", "deepseek_v31",
+      "--chat-template", "examples/tool_chat_template_deepseekv31.jinja",
       "--port", "8001"
     ]
 
