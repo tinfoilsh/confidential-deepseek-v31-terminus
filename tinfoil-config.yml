@@ -17,7 +17,7 @@ containers:
       "--runtime", "nvidia",
       "--gpus", "all",
       "--ipc", "host",  
-      "vllm/vllm-openai:v0.10.2",
+      "vllm/vllm-openai:v0.11.0",
       "--model", "/tinfoil/mpk/mpk-0289583410dc6377d761a9c1b8317688f717b304314100d070a508729e04fe2c",
       "--enable-expert-parallel",
       "--tensor-parallel-size", "8",
