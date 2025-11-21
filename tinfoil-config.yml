@@ -19,7 +19,6 @@ containers:
       "--ipc", "host",  
       "vllm/vllm-openai:v0.11.2@sha256:2c908d5a84ed251b6a17d179f42d06df1aff353007779ac5eecd8a0ea3fe9331",
       "--model", "/tinfoil/mpk/mpk-0289583410dc6377d761a9c1b8317688f717b304314100d070a508729e04fe2c",
-      "--decode-context-parallel-size", "4",
       "--tensor-parallel-size", "8",
       "--max-model-len", "65536",
       "--served-model-name", "deepseek-v31-terminus",
