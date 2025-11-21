@@ -1,5 +1,5 @@
-shim-version: v0.2.6@sha256:db5221f8e0c92562ddbe7d708a374ee0ca393bddc49e3ab2add5e23d8052b843
-cvm-version: 0.4.1
+shim-version: v0.2.10@sha256:f9040a48106ab06c290fd9b225d4dd53a2daad715c9107594d4310b21592039f
+cvm-version: 0.4.15
 cpus: 32
 memory: 524288
 gpus: full
@@ -17,11 +17,11 @@ containers:
       "--runtime", "nvidia",
       "--gpus", "all",
       "--ipc", "host",  
-      "vllm/vllm-openai:v0.11.0",
+      "vllm/vllm-openai:v0.11.2@sha256:2c908d5a84ed251b6a17d179f42d06df1aff353007779ac5eecd8a0ea3fe9331",
       "--model", "/tinfoil/mpk/mpk-0289583410dc6377d761a9c1b8317688f717b304314100d070a508729e04fe2c",
-      "--enable-expert-parallel",
+      "--decode-context-parallel-size", "4",
       "--tensor-parallel-size", "8",
-      "--max-model-len", "131072",
+      "--max-model-len", "65536",
       "--served-model-name", "deepseek-v31-terminus",
       "--enable-auto-tool-choice",
       "--tool-call-parser", "deepseek_v31",
@@ -38,3 +38,4 @@ shim:
   paths:
     - /v1/chat/completions
     - /metrics
+    - /health
